@@ -1,6 +1,10 @@
 
 # Lists and Maps Lab
 
+### My changes
+
+added 2 code snippets to the readme and completed the lab and commited the index.ipynb filev(P.S. I really liked this lab, the result images were so cool:D)<br><img src="./res.png">
+
 ### Introduction
 
 Ok, so now that we have a sense of how to read from a list and alter a list in Python, let's see how our knowledge of lists can help us in creating data visualizations by plotting maps.

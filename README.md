@@ -182,6 +182,51 @@ buenos_map
 
 But that's a lesson for another day.
 
+
+### Simple Codes 
+
+```python
+import matplotlib.pyplot as plt
+
+lyrics = "Ah, Ba Ba Ba Ba Barbara Ann Ba Ba Ba Ba Barbara Ann Oh Barbara Ann Take My Hand Barbara Ann You Got Me Rockin' And A-Rollin' Rockin' And A-Reelin' Barbara Ann Ba Ba Ba Barbara Ann Ba Ba Ba Ba Barbara Ann Ba Ba Ba Ba Barbara Ann"
+list_of_lyric_words = lyrics.split(' ')
+unique_words = set(list_of_lyric_words)
+
+print('Total words in lyrics: ', len(list_of_lyric_words))
+print('Number of unique words in lyrics: ', len(unique_words))
+print('Percentage of unique words: ', len(unique_words)/len(list_of_lyric_words)*100)
+
+unique_count = {}
+for word in unique_words:
+	count = 0
+	for nWord in list_of_lyric_words:
+		if word == nWord:
+			count +=1
+
+	unique_count[word]=count 
+
+print(unique_count)
+
+y_pos = [unique_count[key] for key in unique_count.keys()]
+plt.bar(unique_count.keys(), y_pos, align='center', alpha=0.5)
+plt.show()
+```
+
+```python 
+neighborhoods = ['Palermo', 'Ricoleta', 'Santelmo', 'Puerto Madero', 'Belgrano', 'La Boca']
+laboca = neighborhoods[-1]
+
+# pip install folium
+coordinates = [-43.23, -54.23]
+import folium 
+
+_map = folium.Map([coordinates[0], coordinates[1]])
+_marker = folium.Marker([coordinates[0], coordinates[1]])
+_marker.add_to(_map)
+print(_map)
+print(_marker)
+```
+
 ### Summary
 
 In this lesson we saw how to select information from a list and then plot that information with maps.  We saw that lists can make good arguments to methods, as they represent an ordered collection of information, like latitude followed by longitude.  In just a few lessons we saw how to use Python to make visualizations with our data going forward.
